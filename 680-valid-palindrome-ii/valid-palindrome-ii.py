@@ -2,10 +2,27 @@ class Solution:
     def validPalindrome(self, s: str) -> bool:
         l, r = 0, len(s) - 1
         
+        # while l < r:
+        #     if s[l] != s[r]:
+        #         skipL, skipR = s[l + 1: r + 1], s[l: r]
+        #         return (skipL == skipL[::-1] or skipR == skipR[::-1])
+        #     l, r = l + 1, r - 1
+        # return True
+        
+
+        def isPalindrome(s: str, left: int, right: int) -> bool:
+            while left < right:
+                if s[left] != s[right]:
+                    return False
+                left, right = left + 1, right - 1
+            return True
+
+        l, r = 0, len(s) - 1
+
         while l < r:
             if s[l] != s[r]:
-                skipL, skipR = s[l + 1: r + 1], s[l: r]
-                return (skipL == skipL[::-1] or skipR == skipR[::-1])
+                # Check by skipping either the left or right character
+                return isPalindrome(s, l + 1, r) or isPalindrome(s, l, r - 1)
             l, r = l + 1, r - 1
-        return True
         
+        return True

@@ -13,6 +13,8 @@ class Solution:
 #         return n <= 0
         
         # Solution 2
+        # TC : O(n)
+        # SC : O(1)
         empty = 0 if flowerbed[0] else 1
         for f in flowerbed:
             if f:

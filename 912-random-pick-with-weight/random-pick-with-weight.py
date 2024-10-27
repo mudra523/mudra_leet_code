@@ -10,12 +10,12 @@ class Solution:
 
     def pickIndex(self) -> int:
         target = self.total_sum * random.random()
-        # run a linear search to find the target zone
+        # run a linear search to find the target zone   TC O(N)
         # for i, pre_sum in enumerate(self.prefix_sums):
         #     if target < pre_sum:
         #         return i
         
-        # run a binary search to find the target zone
+        # run a binary search to find the target zone  TC O(log N)
         low , high = 0, len(self.prefix_sums)
         while low < high:
             mid = low + (high - low) // 2

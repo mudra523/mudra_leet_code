@@ -2,17 +2,17 @@ class Solution:
 
     def __init__(self, w: List[int]):
         self.prefix_sums = []
-        pre_sum = 0
+        sum = 0
         for weight in w:
-            pre_sum += weight
-            self.prefix_sums.append(pre_sum)
-        self.total_sum = pre_sum
+            sum += weight
+            self.prefix_sums.append(sum)
+        self.total_sum = sum
 
     def pickIndex(self) -> int:
         target = self.total_sum * random.random()
         # run a linear search to find the target zone   TC O(N)
-        # for i, pre_sum in enumerate(self.prefix_sums):
-        #     if target < pre_sum:
+        # for i, sum in enumerate(self.prefix_sums):
+        #     if target < sum:
         #         return i
         
         # run a binary search to find the target zone  TC O(log N)

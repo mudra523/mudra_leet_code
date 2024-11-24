@@ -16,6 +16,7 @@ class Solution:
         #     res[i] = pre[i] * suf[i]
         # return res
         
+        #Solution 2 TC O(n) SC O(1)
         n = len(nums)
         res = [1] * n
         

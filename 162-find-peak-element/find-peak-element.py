@@ -17,8 +17,7 @@ class Solution:
     #     return self.search(nums, mid + 1, r)
         
         #Solution 3: TC: O(log(n)) SC O(1)
-        l = 0
-        r = len(nums) - 1
+        l, r = 0, len(nums) - 1
         while l < r:
             mid = (l + r) // 2
             if nums[mid] > nums[mid + 1]:

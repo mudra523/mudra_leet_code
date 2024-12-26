@@ -2,7 +2,7 @@ class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         def quickSelect(nums, k):
             pivot = random.choice(nums)
-            
+
             left, right, mid = [], [], []
             for n in nums:
                 if pivot < n:
@@ -11,14 +11,12 @@ class Solution:
                     right.append(n)
                 else:
                     mid.append(n)
-                    
+            
             if k <= len(left):
                 return quickSelect(left, k)
             
-            if len(left) + len(mid) < k:
+            if k > len(left) + len(mid):
                 return quickSelect(right, k - len(left) - len(mid))
             
             return pivot
-
         return quickSelect(nums, k)
-                

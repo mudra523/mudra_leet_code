@@ -2,7 +2,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         # TC: O(n) SC: O(n)
         stack = []
-        mapping = {')': '(', ']': '[', '}': '{'}
+        mapping = {')': '(', '}': '{', ']':'['}
 
         for i in s:
             if i in mapping:

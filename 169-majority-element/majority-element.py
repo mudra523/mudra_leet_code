@@ -9,9 +9,6 @@ class Solution:
             count += (1 if n == res else -1)
         return res
 
-
-
-
         # SC O(n)
         # count = {}
         # res, maxCount = 0, 0

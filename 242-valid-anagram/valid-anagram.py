@@ -5,16 +5,16 @@ class Solution:
         # return Counter(t) == Counter(s) 
 
         # Solution 3 TC: O(n) SC: O(1)
-        if len(s) != len(t):
-            return False
-        count = [0] * 26
-        for c in s:
-            count[ord(c) - ord('a')] += 1
+        # if len(s) != len(t):
+        #     return False
+        # count = [0] * 26
+        # for c in s:
+        #     count[ord(c) - ord('a')] += 1
         
-        for c in t:
-            count[ord(c) - ord('a')] -= 1
+        # for c in t:
+        #     count[ord(c) - ord('a')] -= 1
 
-        return all(c == 0 for c in count)
+        # return all(c == 0 for c in count)
         
         # Solution 4
         # Solution 1
@@ -47,17 +47,9 @@ class Solution:
         set2 = {}
 
         for s1 in s:
-            if s1 in set1:
-                set1[s1] += 1
-            else:
-                set1[s1] = 1
+            set1[s1] = set1.get(s1, 0) + 1
         for s2 in t:
-            if s2 in set2:
-                set2[s2] += 1
-            else:
-                set2[s2] = 1
-        
-        for s1 in set1:
-            if set1[s1] != set2[s1]:
-                return False
+            set2[s2] = set2.get(s2, 0) + 1
+        if set1 != set2:
+            return False
         return True

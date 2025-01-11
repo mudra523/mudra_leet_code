@@ -42,3 +42,22 @@ class Solution:
         #     else:
         #         return False
         # return True
+
+        set1 = {}
+        set2 = {}
+
+        for s1 in s:
+            if s1 in set1:
+                set1[s1] += 1
+            else:
+                set1[s1] = 1
+        for s2 in t:
+            if s2 in set2:
+                set2[s2] += 1
+            else:
+                set2[s2] = 1
+        
+        for s1 in set1:
+            if set1[s1] != set2[s1]:
+                return False
+        return True

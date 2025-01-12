@@ -13,17 +13,19 @@ class Solution:
             edge(r - 1, c)
             edge(r, c + 1)
             edge(r, c - 1)
-
+        # 1. (DFS) Capture Unsurraunded Regions (O -> T) 
         for r in range(ROWS):
             for c in range(COLS):
                 if ((r in [0, ROWS - 1] or c in [0, COLS - 1]) and board[r][c] == "O"):
                     edge(r, c)
-                
+
+        # 2. Capture Surraunded Regions (X -> O)        
         for r in range(ROWS):
             for c in range(COLS):
                 if board[r][c] == "O":
                     board[r][c] = "X"
         
+        # 3. Uncaptured SUrrounded Region (T -> O)
         for r in range(ROWS):
             for c in range(COLS):
                 if board[r][c] == "T":

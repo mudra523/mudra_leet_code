@@ -12,7 +12,7 @@ class Solution:
             visit.add((r, c))
             q.append((r, c))
             while q:
-                row, col = q.popleft()
+                row, col = q.popleft() # popleft(): bfs, recursive / pop(): dfs, recursive
                 directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
                 for dr, dc in directions:
                     r, c = row + dr, col + dc
@@ -22,6 +22,7 @@ class Solution:
                         (r, c) not in visit):
                         visit.add((r, c))
                         q.append((r, c))
+        
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == "1" and (r, c) not in visit:

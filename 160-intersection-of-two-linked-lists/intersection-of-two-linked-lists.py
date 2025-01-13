@@ -10,6 +10,6 @@ class Solution:
         two = headB
 
         while one != two:
-            one = headB if one is None else one.next
-            two = headA if two is None else two.next
+            one = one.next if one else headB
+            two = two.next if two else headA
         return one

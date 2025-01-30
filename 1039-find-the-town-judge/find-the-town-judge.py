@@ -9,6 +9,7 @@ class Solution:
             if delta[i] == n -1:
                 return i
         return -1
+        
         # Solution1 Hashmap TC = SC = O(N)
         # incoming = defaultdict(int)
         # outgoing = defaultdict(int)

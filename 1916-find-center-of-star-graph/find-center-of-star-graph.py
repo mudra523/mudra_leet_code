@@ -1,5 +1,6 @@
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
+        # TC = SC = O(n)
         centerGraph = {}
 
         for s, d in edges:

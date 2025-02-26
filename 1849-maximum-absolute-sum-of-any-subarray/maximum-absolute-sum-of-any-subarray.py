@@ -1,6 +1,6 @@
 class Solution:
     def maxAbsoluteSum(self, nums: List[int]) -> int:
-        # TC: O(n), SC: 
+        # TC: O(n), SC: O(1) # Use Kadence Algo Find Max Sum & Min Sum take max of both with absolute value Done Mudu
         max_sum = min_sum = cur_max = cur_min = 0
         for n in nums:
             cur_max = max(n, cur_max + n)

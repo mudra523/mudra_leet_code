@@ -7,7 +7,7 @@
 
 class Solution:
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
-        # 
+        # TC: O(n) SC: O(n)
         graph = defaultdict(list)
 
         def buildGraph(node, parent=None):

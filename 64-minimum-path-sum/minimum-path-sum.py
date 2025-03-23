@@ -1,5 +1,6 @@
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
+        # TC =. SC = O(N * M)
         ROWS, COLS = len(grid), len(grid[0])
 
         res = [[float("inf")] * (COLS + 1) for r in range(ROWS + 1)]

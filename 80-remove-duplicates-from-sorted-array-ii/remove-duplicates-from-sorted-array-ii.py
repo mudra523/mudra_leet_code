@@ -6,7 +6,7 @@ class Solution:
         while r < len(nums):
             count = 1
 
-            while r + 1 < len(nums) and nums[r] == nums[r +1]:
+            while r + 1 < len(nums) and nums[r] == nums[r + 1]:
                 r += 1
                 count += 1
 

@@ -7,3 +7,4 @@ class Solution:
                 nums[k] = nums[i]
                 k += 1
         return k
+       
